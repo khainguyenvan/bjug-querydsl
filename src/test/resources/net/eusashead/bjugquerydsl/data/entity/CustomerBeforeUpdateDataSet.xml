@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="target/xsd/dataset.xsd" 
+    xmlns:PUBLIC="PUBLIC">
+    <PUBLIC:CUSTOMER CUSTOMER_ID="1" EMAIL="s" FIRST_NAME="s" JOINED="2009-01-01 01:01:01" LAST_NAME="s" />
+</dataset>
+
+ 
+
+ 
+ 

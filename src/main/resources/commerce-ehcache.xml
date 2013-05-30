@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ehcache 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd">
+
+    <!-- Sets the path to the directory where cache .data files are created.
+
+         If the path is a Java System Property it is replaced by
+         its value in the running VM.
+
+         The following properties are translated:
+         user.home - User's home directory
+         user.dir - User's current working directory
+         java.io.tmpdir - Default temp file path -->
+    <diskStore path="java.io.tmpdir/hibernate/commerce"/>
+
+
+    <!--Default Cache configuration. These will applied to caches programmatically created through
+        the CacheManager.
+
+        The following attributes are required for defaultCache:
+
+        maxInMemory       - Sets the maximum number of objects that will be created in memory
+        eternal           - Sets whether elements are eternal. If eternal,  timeouts are ignored and the element
+                            is never expired.
+        timeToIdleSeconds - Sets the time to idle for an element before it expires.
+                            i.e. The maximum amount of time between accesses before an element expires
+                            Is only used if the element is not eternal.
+                            Optional attribute. A value of 0 means that an Element can idle for infinity
+        timeToLiveSeconds - Sets the time to live for an element before it expires.
+                            i.e. The maximum time between creation time and when an element expires.
+                            Is only used if the element is not eternal.
+        overflowToDisk    - Sets whether elements can overflow to disk when the in-memory cache
+                            has reached the maxInMemory limit.
+
+        -->
+
+	<!-- Default cache is required --> 
+	<defaultCache
+            maxElementsInMemory="10000"
+            eternal="false"
+            timeToIdleSeconds="120"
+            timeToLiveSeconds="120"
+            overflowToDisk="true"
+            diskPersistent="false"
+            diskExpiryThreadIntervalSeconds="120"/>
+            
+    <!-- Cache used by the Hibernate for "standard" queries --> 
+   	<cache
+	    name="org.hibernate.cache.StandardQueryCache"
+	    maxElementsInMemory="10"
+	    eternal="false"
+	    timeToLiveSeconds="120"
+	    overflowToDisk="true"/>
+	
+	<!-- Cache used by the Hibernate for timestamp updates --> 
+	<cache
+	    name="org.hibernate.cache.UpdateTimestampsCache"
+	    maxElementsInMemory="5000"
+	    eternal="true"
+	    overflowToDisk="true"/>
+	
+    <!-- Entity query caches -->
+   	
+	<cache
+	    name="query.net.eusashead.bjugquerydsl.data.entity.Attribute"
+	    maxElementsInMemory="100"
+	    eternal="false"
+	    timeToLiveSeconds="120"
+	    overflowToDisk="true"
+	/>
+   	
+	<cache
+	    name="query.net.eusashead.bjugquerydsl.data.entity.Basket"
+	    maxElementsInMemory="100"
+	    eternal="false"
+	    timeToLiveSeconds="120"
+	    overflowToDisk="true"
+	/>
+   	
+	<cache
+	    name="query.net.eusashead.bjugquerydsl.data.entity.BasketItem"
+	    maxElementsInMemory="100"
+	    eternal="false"
+	    timeToLiveSeconds="120"
+	    overflowToDisk="true"
+	/>
+   	
+	<cache
+	    name="query.net.eusashead.bjugquerydsl.data.entity.Customer"
+	    maxElementsInMemory="100"
+	    eternal="false"
+	    timeToLiveSeconds="120"
+	    overflowToDisk="true"
+	/>
+   	
+	<cache
+	    name="query.net.eusashead.bjugquerydsl.data.entity.Inventory"
+	    maxElementsInMemory="100"
+	    eternal="false"
+	    timeToLiveSeconds="120"
+	    overflowToDisk="true"
+	/>
+   	
+	<cache
+	    name="query.net.eusashead.bjugquerydsl.data.entity.Product"
+	    maxElementsInMemory="100"
+	    eternal="false"
+	    timeToLiveSeconds="120"
+	    overflowToDisk="true"
+	/>
+   	
+	<cache
+	    name="query.net.eusashead.bjugquerydsl.data.entity.StockKeepingUnit"
+	    maxElementsInMemory="100"
+	    eternal="false"
+	    timeToLiveSeconds="120"
+	    overflowToDisk="true"
+	/>
+   	
+	<cache
+	    name="query.net.eusashead.bjugquerydsl.data.entity.Value"
+	    maxElementsInMemory="100"
+	    eternal="false"
+	    timeToLiveSeconds="120"
+	    overflowToDisk="true"
+	/>
+   	
+    <!-- Domain object caches -->	
+   	
+   	<cache name="net.eusashead.bjugquerydsl.data.entity.Attribute"
+        maxElementsInMemory="300"
+        eternal="true"
+        timeToIdleSeconds="500"
+        timeToLiveSeconds="500"
+        overflowToDisk="false"
+	/>
+   	
+   	<cache name="net.eusashead.bjugquerydsl.data.entity.Basket"
+        maxElementsInMemory="300"
+        eternal="true"
+        timeToIdleSeconds="500"
+        timeToLiveSeconds="500"
+        overflowToDisk="false"
+	/>
+   	
+   	<cache name="net.eusashead.bjugquerydsl.data.entity.BasketItem"
+        maxElementsInMemory="300"
+        eternal="true"
+        timeToIdleSeconds="500"
+        timeToLiveSeconds="500"
+        overflowToDisk="false"
+	/>
+   	
+   	<cache name="net.eusashead.bjugquerydsl.data.entity.Customer"
+        maxElementsInMemory="300"
+        eternal="true"
+        timeToIdleSeconds="500"
+        timeToLiveSeconds="500"
+        overflowToDisk="false"
+	/>
+   	
+   	<cache name="net.eusashead.bjugquerydsl.data.entity.Inventory"
+        maxElementsInMemory="300"
+        eternal="true"
+        timeToIdleSeconds="500"
+        timeToLiveSeconds="500"
+        overflowToDisk="false"
+	/>
+   	
+   	<cache name="net.eusashead.bjugquerydsl.data.entity.Product"
+        maxElementsInMemory="300"
+        eternal="true"
+        timeToIdleSeconds="500"
+        timeToLiveSeconds="500"
+        overflowToDisk="false"
+	/>
+   	
+   	<cache name="net.eusashead.bjugquerydsl.data.entity.StockKeepingUnit"
+        maxElementsInMemory="300"
+        eternal="true"
+        timeToIdleSeconds="500"
+        timeToLiveSeconds="500"
+        overflowToDisk="false"
+	/>
+   	
+   	<cache name="net.eusashead.bjugquerydsl.data.entity.Value"
+        maxElementsInMemory="300"
+        eternal="true"
+        timeToIdleSeconds="500"
+        timeToLiveSeconds="500"
+        overflowToDisk="false"
+	/>
+	
+</ehcache>
+
+

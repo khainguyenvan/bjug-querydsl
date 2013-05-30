@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="target/xsd/dataset.xsd" 
+    xmlns:PUBLIC="PUBLIC">
+    <PUBLIC:PRODUCT NAME="s" PRODUCT_ID="1" />
+    <PUBLIC:ATTRIBUTE ATTRIBUTE_ID="1" NAME="s" PRODUCT_ID="1" />
+    <PUBLIC:VALUE ATTRIBUTE_ID="1" NAME="s" VALUE_ID="1" />
+</dataset>
+
+ 
+
+ 
+ 
