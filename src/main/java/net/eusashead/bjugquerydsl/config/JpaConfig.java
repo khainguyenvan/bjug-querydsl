@@ -4,10 +4,8 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.data.rest.webmvc.RepositoryRestConfiguration;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.JpaDialect;
@@ -20,8 +18,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
-@ComponentScan(basePackages="net.eusashead.bjugquerydsl.data")
-@EnableJpaRepositories(basePackages="net.eusashead.bjugquerydsl.data")
+
+@EnableJpaRepositories(basePackageClasses={net.eusashead.bjugquerydsl.data.repository.Marker.class})
 @EnableTransactionManagement
 public class JpaConfig {
 	
@@ -33,7 +31,7 @@ public class JpaConfig {
         return builder.setType(EmbeddedDatabaseType.H2).build();
     }
 
-    @Bean 
+    @Bean(name="entityManagerFactory")
     public EntityManagerFactory entityManagerFactory() {
         HibernateJpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         vendorAdapter.setDatabase(Database.H2);
@@ -62,9 +60,4 @@ public class JpaConfig {
         return txManager;
     }
     
-    @Bean
-    public RepositoryRestConfiguration repositoryRestConfiguration() {
-    	RepositoryRestConfiguration cfg = new RepositoryRestConfiguration();
-    	return cfg;
-    }
 }

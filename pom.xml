@@ -10,8 +10,8 @@
     <url>http://maven.apache.org</url>
     <properties>
         <encoding>UTF-8</encoding>
-        <org.springframework.version>3.1.2.RELEASE</org.springframework.version>
-        <org.hibernate.version>4.1.7.Final</org.hibernate.version>
+        <org.springframework.version>3.2.2.RELEASE</org.springframework.version>
+        <org.hibernate.version>4.1.12.Final</org.hibernate.version>
         <org.unitils.version>3.3</org.unitils.version>
     </properties>
     <dependencies>
@@ -272,6 +272,19 @@
             <artifactId>h2</artifactId>
             <version>1.3.168</version>
         </dependency>
+        
+        <!-- AspectJ dependencies -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>1.7.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>1.7.0</version>
+		</dependency>
 
     </dependencies>
 
