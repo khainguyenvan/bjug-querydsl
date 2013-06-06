@@ -1,13 +1,16 @@
 package net.eusashead.bjugquerydsl.data.predicate;
 
 import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import net.eusashead.bjugquerydsl.config.WebConfig;
+import net.eusashead.bjugquerydsl.data.entity.Inventory;
 import net.eusashead.bjugquerydsl.data.entity.Product;
+import net.eusashead.bjugquerydsl.data.entity.QInventory;
 import net.eusashead.bjugquerydsl.data.entity.QProduct;
 import net.eusashead.bjugquerydsl.data.entity.QStockKeepingUnit;
 import net.eusashead.bjugquerydsl.data.entity.StockKeepingUnit;
@@ -273,6 +276,20 @@ public class PredicateTest {
 				.join(path.product())
 				.fetch() // Get the product eagerly
 				.singleResult(path);
+		
+		System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(results));
+		
+	}
+	
+	@Test
+	@Transactional
+	public void testInventoryQueryDelegate() throws Exception {
+		JPAQuery query = new JPAQuery(em);
+		QInventory path = QInventory.inventory;
+		
+		List<Inventory> results = query.from(path)
+				.where(path.isNotSold().and(path.inStockSince(new Date())))
+				.list(path);
 		
 		System.out.println(mapper.writerWithDefaultPrettyPrinter().writeValueAsString(results));
 		

@@ -153,6 +153,13 @@
 			<artifactId>querydsl-jpa</artifactId>
 			<version>3.2.0</version>
 		</dependency>
+		
+		<!-- Query DSL for MongoDB -->
+		<dependency>
+			<groupId>com.mysema.querydsl</groupId>
+			<artifactId>querydsl-mongodb</artifactId>
+			<version>3.2.0</version>
+		</dependency>
 
 		<!-- Needed to serialize Hibernate collections to JSON -->
 		<dependency>
@@ -299,6 +306,7 @@
 
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.0</version>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
@@ -315,6 +323,15 @@
 					</includes>
 					<forkMode>always</forkMode>
 					<argLine>-Xmx1050m -XX:MaxPermSize=512M</argLine>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<groupId>com.atlassian.maven.plugins</groupId>
+				<artifactId>maven-jgitflow-plugin</artifactId>
+				<version>1.0-alpha7</version>
+				<configuration>
+					<!-- see goals wiki page for configuration options -->
 				</configuration>
 			</plugin>
 
@@ -347,7 +364,7 @@
 						</goals>
 						<configuration>
 							<outputDirectory>target/generated-sources/java</outputDirectory>
-							<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor,com.mysema.query.apt.QuerydslAnnotationProcessor</processor>
+							<processor>com.mysema.query.apt.jpa.JPAAnnotationProcessor,org.springframework.data.mongodb.repository.support.MongoAnnotationProcessor,com.mysema.query.apt.QuerydslAnnotationProcessor</processor>
 						</configuration>
 					</execution>
 				</executions>
