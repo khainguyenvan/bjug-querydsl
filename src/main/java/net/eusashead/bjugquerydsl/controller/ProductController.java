@@ -54,6 +54,8 @@ public class ProductController {
 		return new ResponseEntity<Product>(product, HttpStatus.OK);
 	}
 
+	// TODO use a map of attr/values as per
+	// http://stackoverflow.com/questions/7312436/spring-mvc-how-to-get-all-request-params-in-a-map-in-spring-controller
 	@RequestMapping(value="/search/", method=RequestMethod.GET)
 	@Transactional
 	public ResponseEntity<List<Product>> search(@RequestParam("attribute") String attribute,

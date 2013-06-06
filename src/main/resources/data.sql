@@ -43,19 +43,19 @@ INSERT INTO "PUBLIC"."VALUE" ("ATTRIBUTE_ID", "NAME", "VALUE_ID")
 -- SKUs (e.g. possible products)
 -- Telecasters
 INSERT INTO "PUBLIC"."STOCK_KEEPING_UNIT" ("NAME", "PRICE", "PRODUCT_ID", "SKU_ID")
-    VALUES ('Fender Telecaster (Rosewood neck, Candy Apple Red)', 1039.99, 1, 1);
+    VALUES ('Fender Telecaster (Rosewood neck, Candy Apple Red)', 1139.99, 1, 1);
 INSERT INTO "PUBLIC"."STOCK_KEEPING_UNIT" ("NAME", "PRICE", "PRODUCT_ID", "SKU_ID")
-    VALUES ('Fender Telecaster (Rosewood neck, Sonic Blue)', 1039.99, 1, 2);
+    VALUES ('Fender Telecaster (Rosewood neck, Sonic Blue)', 1139.99, 1, 2);
 INSERT INTO "PUBLIC"."STOCK_KEEPING_UNIT" ("NAME", "PRICE", "PRODUCT_ID", "SKU_ID")
-    VALUES ('Fender Telecaster (Maple neck, Candy Apple Red)', 1039.99, 1, 3);
+    VALUES ('Fender Telecaster (Maple neck, Candy Apple Red)', 1019.99, 1, 3);
 INSERT INTO "PUBLIC"."STOCK_KEEPING_UNIT" ("NAME", "PRICE", "PRODUCT_ID", "SKU_ID")
-    VALUES ('Fender Telecaster (Maple neck, Sonic Blue)', 1039.99, 1, 4);
+    VALUES ('Fender Telecaster (Maple neck, Sonic Blue)', 1019.99, 1, 4);
     
 -- Jazzmasters
 INSERT INTO "PUBLIC"."STOCK_KEEPING_UNIT" ("NAME", "PRICE", "PRODUCT_ID", "SKU_ID")
-    VALUES ('Fender Jazzmaster (Rosewood neck, Fiesta Red)', 1099.99, 2, 5);
+    VALUES ('Fender Jazzmaster (Rosewood neck, Fiesta Red)', 1199.99, 2, 5);
 INSERT INTO "PUBLIC"."STOCK_KEEPING_UNIT" ("NAME", "PRICE", "PRODUCT_ID", "SKU_ID")
-    VALUES ('Fender Jazzmaster (Rosewood neck, Lake Placid Blue)', 1099.99, 2, 6);   
+    VALUES ('Fender Jazzmaster (Rosewood neck, Lake Placid Blue)', 1199.99, 2, 6);   
 INSERT INTO "PUBLIC"."STOCK_KEEPING_UNIT" ("NAME", "PRICE", "PRODUCT_ID", "SKU_ID")
     VALUES ('Fender Jazzmaster (Maple neck, Fiesta Red)', 1099.99, 2, 7);
 INSERT INTO "PUBLIC"."STOCK_KEEPING_UNIT" ("NAME", "PRICE", "PRODUCT_ID", "SKU_ID")

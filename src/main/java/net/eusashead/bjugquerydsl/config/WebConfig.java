@@ -7,16 +7,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.repository.support.DomainClassConverter;
-import org.springframework.data.web.PageableArgumentResolver;
 import org.springframework.format.support.FormattingConversionService;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.http.converter.xml.Jaxb2RootElementHttpMessageConverter;
-import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
-import org.springframework.web.servlet.mvc.method.annotation.ServletWebArgumentResolverAdapter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -35,15 +31,6 @@ public class WebConfig extends WebMvcConfigurationSupport {
 		
 	}
 
-	@Override
-	protected void addArgumentResolvers(
-			List<HandlerMethodArgumentResolver> argumentResolvers) {
-		PageableArgumentResolver resolver = new PageableArgumentResolver();
-		resolver.setFallbackPagable(new PageRequest(1, 20));
-		argumentResolvers.add(new ServletWebArgumentResolverAdapter(resolver));
-		super.addArgumentResolvers(argumentResolvers);
-	}
-	
 	@Bean
 	public DomainClassConverter<?> domainClassConverter() {
 		return new DomainClassConverter<FormattingConversionService>(mvcConversionService());
