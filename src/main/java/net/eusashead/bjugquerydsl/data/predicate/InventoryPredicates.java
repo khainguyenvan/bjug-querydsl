@@ -19,5 +19,9 @@ public class InventoryPredicates {
 	public static BooleanExpression inStockSince(QInventory inventory, Date date) {
 		return inventory.created.before(date);
 	}
-
+	
+	@QueryDelegate(Inventory.class)
+	public static BooleanExpression like(QInventory qtype, Inventory example) {
+	    return example.getInventoryId() != null ? qtype.inventoryId.eq(example.getInventoryId()) : null;
+	}
 }
