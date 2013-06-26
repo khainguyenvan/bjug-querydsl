@@ -6,22 +6,22 @@ import net.eusashead.bjugquerydsl.data.entity.Inventory;
 import net.eusashead.bjugquerydsl.data.entity.QInventory;
 
 import com.mysema.query.annotations.QueryDelegate;
-import com.mysema.query.types.expr.BooleanExpression;
+import com.mysema.query.types.Predicate;
 
 public class InventoryPredicates {
 	
 	@QueryDelegate(Inventory.class)
-	public static BooleanExpression isNotSold(QInventory inventory) {
+	public static Predicate isNotSold(QInventory inventory) {
 		return inventory.sold.isNull();
 	}
 	
 	@QueryDelegate(Inventory.class)
-	public static BooleanExpression inStockSince(QInventory inventory, Date date) {
+	public static Predicate inStockSince(QInventory inventory, Date date) {
 		return inventory.created.before(date);
 	}
 	
 	@QueryDelegate(Inventory.class)
-	public static BooleanExpression like(QInventory qtype, Inventory example) {
+	public static Predicate like(QInventory qtype, Inventory example) {
 	    return example.getInventoryId() != null ? qtype.inventoryId.eq(example.getInventoryId()) : null;
 	}
 }

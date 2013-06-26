@@ -1,5 +1,6 @@
 package net.eusashead.bjugquerydsl.data.repository;
 
+import junit.framework.Assert;
 import net.eusashead.bjugquerydsl.config.JpaConfig;
 import net.eusashead.bjugquerydsl.data.entity.Product;
 import net.eusashead.bjugquerydsl.data.entity.QProduct;
@@ -17,6 +18,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.mysema.query.types.Predicate;
 
+/**
+ * Quick demonstration of the 
+ * QueryDSL integration with the
+ * Spring Data JPA repositories
+ * 
+ * @author patrickvk
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes={JpaConfig.class})
 public class ProductRepositoryTest {
@@ -29,9 +38,9 @@ public class ProductRepositoryTest {
 	public void testPredicate() throws Exception {
 		QProduct path = QProduct.product;
 		Predicate predicate = path.name.eq("Fender Telecaster");
-		Sort sort = new Sort(Sort.Direction.ASC, 				path.name.getMetadata().getName());
+		Sort sort = new Sort(Sort.Direction.ASC, path.name.getMetadata().getName());
 		Pageable pageable = new PageRequest(0, 10, sort);
-		Page<Product> result = repo.findAll(predicate, pageable);
-		System.out.println(result);
+		Page<Product> results = repo.findAll(predicate, pageable);
+		Assert.assertEquals(Integer.valueOf(1), Integer.valueOf(results.getNumberOfElements()));
 	}
 }

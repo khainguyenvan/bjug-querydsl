@@ -3,12 +3,19 @@ package net.eusashead.bjugquerydsl.data.entity;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.TreeSet;
-import java.lang.Integer;
-import net.eusashead.bjugquerydsl.data.entity.Product;
-import net.eusashead.bjugquerydsl.data.entity.Value;
 
-import javax.persistence.*;
 import javax.annotation.Generated;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 

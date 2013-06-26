@@ -3,12 +3,18 @@ package net.eusashead.bjugquerydsl.data.entity;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.TreeSet;
-import java.lang.Integer;
-import net.eusashead.bjugquerydsl.data.entity.BasketItem;
-import net.eusashead.bjugquerydsl.data.entity.Customer;
 
-import javax.persistence.*;
 import javax.annotation.Generated;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 
@@ -140,6 +146,7 @@ public class Basket implements Comparable<Basket>, Serializable {
 
         // Equality is based on all field values
         return
+        	this.getBasketId() == null ? thatObj.getBasketId() == null : this.getBasketId().equals(thatObj.getBasketId())&& 
             this.getCustomer() == null ? thatObj.getCustomer() == null : this.getCustomer().equals(thatObj.getCustomer())&&        
             true;
     }
@@ -150,6 +157,7 @@ public class Basket implements Comparable<Basket>, Serializable {
         int hash = 7;
         
         // Hash is based on all fields
+        hash = 31 * hash + (null == getBasketId() ? 0 : getBasketId().hashCode());
         hash = 31 * hash + (null == getCustomer() ? 0 : getCustomer().hashCode());
 
         return hash;
@@ -168,6 +176,12 @@ public class Basket implements Comparable<Basket>, Serializable {
     
         int cmp;
 
+        cmp = this.getBasketId() == null ?
+                (thatObj.getBasketId() == null ? 0 : -1) :
+                (thatObj.getBasketId() == null ? 1 : this.getBasketId().compareTo(thatObj.getBasketId())
+                );
+        if (cmp !=  0)
+            return cmp;
         cmp = this.getCustomer() == null ?
                 (thatObj.getCustomer() == null ? 0 : -1) :
                 (thatObj.getCustomer() == null ? 1 : this.getCustomer().compareTo(thatObj.getCustomer())

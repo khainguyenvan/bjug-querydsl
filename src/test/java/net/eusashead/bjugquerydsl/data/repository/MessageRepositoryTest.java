@@ -11,6 +11,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+/**
+ * Quick demonstration of the
+ * Mongodb integration options
+ * with QueryDSL and Spring Data Mongo
+ * 
+ * @author patrickvk
+ *
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes={MongoConfig.class})
 public class MessageRepositoryTest {
