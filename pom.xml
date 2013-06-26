@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.eusashead.bjugquerydsl</groupId>
 	<artifactId>commerce</artifactId>
@@ -19,7 +18,7 @@
 		<connection>scm:git:ssh://git@github.com:patrickvankann/bjug-querydsl.git</connection>
 		<developerConnection>scm:git:git@github.com:patrickvankann/bjug-querydsl.git</developerConnection>
 		<url>https://github.com/patrickvankann/bjug-querydsl</url>
-		<tag>HEAD</tag>
+		<tag>1.0.0</tag>
 	</scm>
 
 	<licenses>
@@ -372,6 +371,17 @@
 					</includes>
 					<forkMode>always</forkMode>
 					<argLine>-Xmx1050m -XX:MaxPermSize=512M</argLine>
+				</configuration>
+			</plugin>
+			
+			<!-- When using xml-less approach, you need to disable Maven's warning 
+				about missing web.xml -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
 
