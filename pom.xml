@@ -14,6 +14,21 @@
 		<org.unitils.version>3.3</org.unitils.version>
 		<org.h2.version>1.3.168</org.h2.version>
 	</properties>
+	
+	<scm>
+		<connection>scm:git:ssh://git@github.com:patrickvankann/bjug-querydsl.git</connection>
+		<developerConnection>scm:git:git@github.com:patrickvankann/bjug-querydsl.git</developerConnection>
+		<url>https://github.com/patrickvankann/bjug-querydsl</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 	<dependencies>
 
 		<!-- Servlet API -->
