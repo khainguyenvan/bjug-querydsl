@@ -38,7 +38,7 @@ public class HalResponseEntityBuilder extends BaseHalRepresentationBuilder imple
 	/**
 	 * Add the supplied {@link Representation} to 
 	 * the representation as an embedded resource
-	 * @param name
+	 * @param rel
 	 * @param value
 	 * @return
 	 */
@@ -51,7 +51,7 @@ public class HalResponseEntityBuilder extends BaseHalRepresentationBuilder imple
 	 * Add the supplied {@link Representation} to 
 	 * the representation as an embedded resource
 	 * with the supplied {@link UriTemplate}
-	 * @param name
+	 * @param rel
 	 * @param value
 	 * @return
 	 */
