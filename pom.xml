@@ -3,7 +3,7 @@
 	<groupId>net.eusashead.bjugquerydsl</groupId>
 	<artifactId>commerce</artifactId>
 	<packaging>war</packaging>
-	<version>1.0.2</version>
+	<version>1.0.3-SNAPSHOT</version>
 	<name>commerce</name>
 	<url>http://maven.apache.org</url>
 	<properties>
@@ -18,7 +18,7 @@
 		<connection>scm:git:ssh://git@github.com:patrickvankann/bjug-querydsl.git</connection>
 		<developerConnection>scm:git:git@github.com:patrickvankann/bjug-querydsl.git</developerConnection>
 		<url>https://github.com/patrickvankann/bjug-querydsl</url>
-		<tag>1.0.2</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<licenses>
