@@ -56,3 +56,11 @@ http://localhost:8080/app/product
 
 Accessing the HAL controller:
 http://localhost:8080/app/sku/?page=0&size=2&sort=skuId,desc
+
+Notes for IntelliJ Users
+-
+To avoid needing to run maven commands outside of the IDE to generate the query types, you can integrate with the APT support in the IDE. This is available from IntelliJ Preferences (cmd + ,) - choose "Annotation Processors" in the "Compiler" settings, enable annotation processing and select to "Obtain processors from project class path".
+
+Notes for Eclipse and Maven (m2e) users
+-
+If you use Eclipse and import the project as a Maven project, the APT plugins are run automatically. However, from time to time I found that this would not work and annotation processing would need to be triggered from the command using `mvn process-resources`.
